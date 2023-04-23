@@ -10,16 +10,12 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany
-    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
     private Integer cargaHoraria;
-    @Column(nullable = false)
     private Double valor;
-    @Column(nullable = false)
     private Double notaMinima;
+
 
     public Curso(){
     }

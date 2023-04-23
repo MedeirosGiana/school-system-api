@@ -11,11 +11,10 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
     private Integer numeroTurma;
-    @Column(nullable = false)
+
     private Integer numeroVagas;
-    @Column(nullable = false)
+
     private Date dataInicio;
 
     public Turma(){
