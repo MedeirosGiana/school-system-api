@@ -3,7 +3,7 @@ package com.school.system.api.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_cursos")
+@Table(name = "tb_curso")
 public class Curso {
 
     @Id
@@ -67,4 +67,6 @@ public class Curso {
     public void setNotaMinima(Double notaMinima) {
         this.notaMinima = notaMinima;
     }
+
+
 }
