@@ -1,12 +1,17 @@
 package com.school.system.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "tb_turmas")
-public class Turma {
+@Table(name = "tb_turma")
+public class Turma implements Serializable {
+    private static final Integer serialVersionUID = 1;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,16 +20,13 @@ public class Turma {
 
     private Integer numeroVagas;
 
-    private Date dataInicio;
+    private Instant inicio;
 
-    public Turma(){
-    }
-
-    public Turma(Integer id, Integer numeroTurma, Integer numeroVagas, Date dataInicio) {
+    public Turma(Integer id, Integer numeroTurma, Integer numeroVagas, Instant inicio) {
         this.id = id;
         this.numeroTurma = numeroTurma;
         this.numeroVagas = numeroVagas;
-        this.dataInicio = dataInicio;
+        this.inicio = inicio;
     }
 
     public Integer getId() {
@@ -51,11 +53,14 @@ public class Turma {
         this.numeroVagas = numeroVagas;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
+    public Instant getInicio() {
+        return inicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
+    public void setInicio(Instant inicio) {
+        this.inicio = inicio;
     }
+
+
+
 }

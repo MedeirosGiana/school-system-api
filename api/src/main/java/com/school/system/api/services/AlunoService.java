@@ -14,11 +14,12 @@ public class AlunoService {
     @Autowired
     private AlunoRepository repository;
 
-    public List<Aluno> findAll(){
+    public List<Aluno> findAll(){ //método para retornar todos os alunos do banco de dados
+
         return repository.findAll();
     }
 
-    public Aluno findById(Integer id){
+    public Aluno findById(Integer id){//método para retornar  os alunos do banco de dados por id
        Optional <Aluno> obj = repository.findById(id);
        return obj.get();
     }
