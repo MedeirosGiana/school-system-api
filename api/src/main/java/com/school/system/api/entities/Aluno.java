@@ -17,15 +17,18 @@ public class Aluno implements Serializable {
     private String nome;
     private String cpf;
     private String email;
+    @OneToOne
+    private Turma turma;
 
     public Aluno(){
     }
 
-    public Aluno(Integer id, String nome, String cpf, String email) {
+    public Aluno(Integer id, String nome, String cpf, String email, Turma turma) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+        this.turma = turma;
     }
 
     public Integer getId() {
@@ -59,5 +62,5 @@ public class Aluno implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
 }

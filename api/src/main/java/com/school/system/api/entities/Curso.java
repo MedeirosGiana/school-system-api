@@ -1,11 +1,17 @@
 package com.school.system.api.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_curso")
-public class Curso {
-
+public class Curso implements Serializable {
+    private static final Integer serialVersionUID = 1;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,7 +21,8 @@ public class Curso {
     private Integer cargaHoraria;
     private Double valor;
     private Double notaMinima;
-
+    @OneToMany(mappedBy = "curso")
+    private List<Turma> turmas = new ArrayList<>();
 
     public Curso(){
     }
@@ -68,5 +75,20 @@ public class Curso {
         this.notaMinima = notaMinima;
     }
 
+    public List<Turma> getTurmas() {
+        return turmas;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Curso curso = (Curso) o;
+        return Objects.equals(id, curso.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

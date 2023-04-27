@@ -1,6 +1,7 @@
 package com.school.system.api.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Matricula {
     private Date dataMatricula;
@@ -47,5 +48,18 @@ public class Matricula {
 
     public void setTurma(Turma turma) {
         this.turma = turma;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Matricula matricula = (Matricula) o;
+        return Objects.equals(dataMatricula, matricula.dataMatricula);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataMatricula);
     }
 }

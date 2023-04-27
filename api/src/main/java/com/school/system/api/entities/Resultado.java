@@ -16,4 +16,5 @@ public class Resultado {
     public void setNotaObtida(Double notaObtida) {
         this.notaObtida = notaObtida;
     }
+
 }
