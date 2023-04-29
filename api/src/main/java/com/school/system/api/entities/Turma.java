@@ -27,8 +27,6 @@ public class Turma implements Serializable {
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
-
-
     public Turma(Integer id, Integer numeroTurma, Integer numeroVagas, Instant inicio, Curso curso) {
         this.id = id;
         this.numeroTurma = numeroTurma;
@@ -37,7 +35,6 @@ public class Turma implements Serializable {
         this.curso = curso;
 
     }
-
     public Turma() {
     }
 

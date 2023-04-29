@@ -16,7 +16,6 @@ public class TurmaService {
     private TurmaRepository repository;
 
     public List<Turma> findAll(){ //método para retornar todos os alunos do banco de dados
-
         return repository.findAll();
     }
 

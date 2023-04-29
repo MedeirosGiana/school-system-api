@@ -14,13 +14,13 @@ import java.util.Optional;
 public class CursoService {
     private CursoRepository repository;
 
-    public List<Curso> findAll(){ //método para retornar todos os cursos do banco de dados
-
+    public List<Curso>  findAll(){
         return repository.findAll();
     }
 
-    public Curso findById(Integer id){//método para retornar  os cursos do banco de dados por id
-        Optional<Curso> obj = repository.findById(id);
-        return obj.get();
+    public Curso findById(Integer id){
+        Optional<Curso> cursoId = repository.findById(id);
+        return cursoId.get();
     }
+
 }

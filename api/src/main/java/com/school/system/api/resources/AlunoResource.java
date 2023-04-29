@@ -1,17 +1,12 @@
 package com.school.system.api.resources;
 
 import com.school.system.api.entities.Aluno;
-import com.school.system.api.repositories.AlunoRepository;
 import com.school.system.api.services.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "/alunos")
 public class AlunoResource {
@@ -31,5 +26,11 @@ public class AlunoResource {
         return ResponseEntity.ok().body(obj);
     }
 
+    @PostMapping
+    public Aluno cadastrarAluno (@RequestBody Aluno aluno){
+        Aluno cadastrar = service.inserirAluno(aluno);
+        return cadastrar;
+    }
 
 }
+

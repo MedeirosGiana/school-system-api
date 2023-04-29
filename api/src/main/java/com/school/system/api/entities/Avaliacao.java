@@ -2,30 +2,32 @@ package com.school.system.api.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.Instant;
-import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_avaliacoes")
-public class Avaliacao {
+@Table(name = "tb_avaliacao")
+public class Avaliacao implements Serializable {
+    private static final Integer serialVersionUID = 1;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
     private Double nota;
-    @Column(nullable = false)
     private Instant data;
 
 
-
+    @Transient
+    private Aluno aluno;
     public Avaliacao() {
     }
 
-    public Avaliacao(Integer id, Double nota, Instant data) {
+    public Avaliacao(Integer id, Double nota, Instant data, Aluno aluno) {
         this.id = id;
         this.nota = nota;
         this.data = data;
+        this.aluno = aluno;
     }
 
     public Integer getId() {
@@ -52,6 +54,14 @@ public class Avaliacao {
         this.data = data;
     }
 
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -64,4 +74,5 @@ public class Avaliacao {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
