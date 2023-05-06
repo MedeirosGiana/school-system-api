@@ -40,7 +40,7 @@ Para executar o projeto em seu ambiente de desenvolvimento, Certifique-se de ter
    - [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
    - [H2 Database](https://www.h2database.com/html/main.html)
 
-### Ferramenta utilizada
+## Ferramenta utilizada
 
    - [Postman](https://www.postman.com/api-documentation-tool/)
 
@@ -50,3 +50,8 @@ Para executar o projeto em seu ambiente de desenvolvimento, Certifique-se de ter
 Se você quiser contribuir, sinta-se à vontade para enviar um pull request ou abrir uma issue.
 
 <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> 
+
+## Autor
+**Giana Medeiros**
+
+https://www.linkedin.com/in/gianamedeiros/
